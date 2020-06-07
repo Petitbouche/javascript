@@ -1,7 +1,0 @@
-
----200607---
-
-- 출력은 id값으로
-
-깃허브 페이지 > 소스를 마스터브랜치로 바꾸기
-https://petitbouche.github.io/javascript/
