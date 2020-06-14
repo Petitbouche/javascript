@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>off_method</title>
+    <style>
+        .border{border:1px solid red;}
+        .helloworld{border-radius:5px; border:5px solid silver; display:inline-block; padding:20px;}
+    </style>
+</head>
+<body>
+    <h1>.off() method</h1>
+    <button id="clickBtn">마우스를 클릭해 보세요!</button>
+    <button id="removeBtn">클릭 이벤트를 제거합니다!</button>
+
+
+
+    <p id="text"></p>
+
+    <div>
+        <button id="test">CLICK ME!</button>
+    </div>
+
+
+
+    <hr>
+
+    <h1>이벤트의 위임</h1>
+    <p>아래 버튼을 눌러 링크를 추가하고, 링크를 삭제해 보세요!</p>
+    <ul>
+        <li><a href="/html/intro">HTML</a></li>
+        <li><a href="/css/intro">CSS</a></li>
+    </ul>
+    <button>리스트 아이템 추가</button>
+    <p id="text2"></p>
+
+
+
+    <hr>
+
+    <button type="button" onclick="helloWorld()">버튼을 연타해 보세요!!</button>
+    <div class="helloworld"></div>
+
+
+
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#clickBtn").on("click", function(){
+                //id가 "clickBtn"인 요소를 클릭했을 때 실행됨
+                $("#text").append("버튼을 클릭했어요!<br>");
+            });
+            $("#removeBtn").on("click", function(){
+                $("#clickBtn").off("click");
+                //id가 "clickBtn"인 요소의 클릭 이벤트와의 연결을 제거함
+            });
+        });
+
+        $(function(){
+            $("#test").on("click", function(){
+                alert("버튼을 클릭했어요!");
+            });
+        });
+
+
+        $(function(){
+            $("ul a").on("click", function(event){    
+                //ul 요소의 자식 요소 중 모든 a 요소를 클릭했을 때
+                event.preventDefault();
+                //a 요소의 클릭 시 기본 동작인 링크의 작동을 중지시킴
+                $("#text2").append("이 링크는 작동하지 않습니다!<br>");
+            });
+        });
+
+
+        // function helloWorld(){
+        //     $("button").addClass('border');
+        // }
+
+
+        function helloWorld(){
+            $(".helloworld").toggleClass('border');
+        }
+    </script>
+</body>
+</html>
