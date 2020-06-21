@@ -1,0 +1,11 @@
+a{text-decoration:none; color:inherit;}
+
+li{list-style:none;}
+
+#all{width:1200px; margin:0 auto;}
+
+.slider>ul>li>a>img{display:block; transition:1s;}
+
+#slider-wrap{width:1200px; height:300px; overflow:hidden;}
+
+.slider>ul{display:flex;}

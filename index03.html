@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        p{color:red; font-size:1.2em; position:relative; 
+        /* animation-name:text; animation-duration:1.3s; animation-iteration-count:infinite; */
+        }
+
+        /* @keyframes text{
+            from{top:10px;} to {top:0;}
+
+            0%{top:0;}
+            25%{top:10px;}
+            50%{top:0;}
+            75%{top:10px;}
+            100%{top:0;}
+        } */
+
+        #text01,#text02,#text03,#text04,#text05{position:relative;}
+    </style>
+</head>
+<body>
+
+    <!-- <div class="text">
+        <p id="all-text">
+            <span id="text01">O</span>
+            <span id="text02">N</span>
+            <span id="text03">스</span>
+            <span id="text04">토</span>
+            <span id="text05">어</span>
+        </p>
+    </div> -->
+
+
+    <div id="all">
+      <div id="slider-wrap">
+        <div class="slider">
+            <ul>
+                <li><a href="#"><img src="img/image01.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/image02.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/image03.jpg" alt=""></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+            setInterval(function(){
+            $('.slider').delay("2500");
+            $('.slider').animate({marginLeft:"-1200px"},500);
+            $('.slider').delay("2500");
+            $('.slider').animate({marginLeft:"-2400px"},500);
+            $('.slider').delay("2500");
+            $('.slider').animate({marginLeft:"0px"},500);
+        });
+        // setInterval(function(){      //반복 실행
+        //     alert("Hello");
+        // },3000);
+
+        // setInterval(function(){
+        //     $('#text01').delay("1000");
+        //     $('#text01').animate({top:"10px"},500);
+        //     $('#text01').delay("1000");
+        //     $('#text01').animate({top:"0px"},500);
+
+        //     $('#text02').delay("1000");
+        //     $('#text02').animate({top:"-10px"},500);
+        //     $('#text02').delay("1000");
+        //     $('#text02').animate({top:"0px"},500);
+
+        //     $('#text03').delay("1000");
+        //     $('#text03').animate({top:"10px"},500);
+        //     $('#text03').delay("1000");
+        //     $('#text03').animate({top:"0px"},500);
+
+        //     $('#text04').delay("1000");
+        //     $('#text04').animate({top:"-10px"},500);
+        //     $('#text04').delay("1000");
+        //     $('#text04').animate({top:"0px"},500);
+
+        //     $('#text05').delay("1000");
+        //     $('#text05').animate({top:"10px"},500);
+        //     $('#text05').delay("1000");
+        //     $('#text05').animate({top:"0px"},500);
+        // });
+
+
+
+
+    </script>
+
+
+</body>
+</html>

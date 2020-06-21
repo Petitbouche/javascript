@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bxslider</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
+    <style>
+        .bx-wrapper{box-shadow:0; border:0;}
+    </style>
+</head>
+<body>
+    <div class="bxslider">
+        <div class="slider01"><img src="img/image01.jpg" alt=""></div>
+        <div class="slider02"><img src="img/image02.jpg" alt=""></div>
+        <div class="slider03"><img src="img/image03.jpg" alt=""></div>
+    </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script>
+        $(function(){
+            $('.bxslider').bxSlider({
+                mode:'fade',
+                speed:500,
+                caption:true,
+                slideWidth:600,
+                infiniteLoop:true,
+                auto:true
+            });
+        });
+    </script>
+</body>
+</html>

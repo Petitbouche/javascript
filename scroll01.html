@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .inner{top:0; z-index:999; width:100%; min-width:1000px; margin: 0 auto; background:#fff; padding:0 10px; height:45px; box-sizing:border-box;}
+
+        .fixinner{position:fixed;} */
+
+        body{margin:0px; padding:0px;}
+
+        .jbTitle{text-align:center;}
+
+        .jbMenu{text-align:center; background:yellow; padding: 10px 0; width:100%;}
+
+        .jbContent{height:2000px;}
+
+        .jbFixed{position:fixed; top:0px;}
+    </style>
+</head>
+<body>
+
+    <div class="jbTitle">
+        <h1>Site Title</h1>
+    </div>
+    <div class="jbMenu">
+        <a href="#"><p>
+            First Menu
+            Second Menu
+            Third Menu
+            Fourth Menu
+        </p></a>
+    </div>
+    <div class="jbContent">
+
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function(){
+        var jbOffset = $('.jbMenu').offset();
+        $(window).scroll(function(){
+            if($(document).scrollTop()>200){
+                $('.jbMenu').addClass('jbFixed');
+            }else{
+                $('.jbMenu').removeClass('jbFixed');
+            }
+        });
+       });
+    </script>
+
+</body>
+</html>
