@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(DocumentObjectModel)</title>
+    <style>
+        /* #box{width:100px; height:100px; border:1px solid black;}
+        .box{background:blueviolet;} */
+
+        /* #box{width:100px; height:100px; border:3px solid salmon;}
+        #box.hover{background:orange; color:white;} */
+
+
+        #box{width:100px; height:100px; border: 3px solid black; position:relative;}
+    </style>
+</head>
+<body>
+    <!-- <h1 id="title" class="title">여기를 변경해 주세요</h1>
+
+    <script>
+    //문서 객체 선택
+    //ES5
+    var title = document.getElementById('title');
+    document.getElementsByTagName("h1");
+    //document.getElementsByClassName("title");
+
+
+    //ES6
+    //var title2 = document.querySelector('#title');
+
+    //문서 객체 조작
+    title.style.color = 'white';
+    title.style.background = 'orange';
+    title.innerHTML = "JavaScript로 문서를 조작";
+    </script> -->
+
+
+
+
+    <!-- <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+
+    <button onclick="setColor();">Click</button>
+
+    <script>
+        // var li = document.querySelectorAll('li');
+        // li[1].style.backgroundColor = "red";
+        // li[1].style.color = "white";
+
+        function setColor(){
+            var li = document.querySelectorAll("li");
+
+            for (var i=0; i<li.length; i++){
+                li[i].style.color="green";
+                li[i].style.backgroundColor="orange";
+            }
+        }
+    </script> -->
+
+
+
+
+    <!-- <div id="content"></div>
+    <div id="content2"></div>
+
+    <script type="text/javascript">
+    
+        var content = document.querySelector('#content');
+
+        content.innerHTML = "<h1> NEW TEXT </h1>";
+        content.innerTEXT = "<h1> NEW TEXT </h1>";
+
+    </script> -->
+
+
+
+    <!-- <div id="box" onclick="changeColor();" class="box">Hello Box</div>
+
+    <script type="text/javascript">
+        function changeColor(){
+            var box = document.querySelector("#box");
+
+            box.setAttribute('class','box');  //addclass
+            box.removeAttribute('class')      //removecalss
+        }
+    </script> -->
+
+
+
+
+
+
+    <!-- 문서객체.addEventListener("이벤트타입",리스너); -->
+
+    <!-- <button id="btn">Click</button>
+
+    <script type="text/javascript">
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', function(){
+            alert('event 1');
+        });
+        btn.addEventListener('click', function(){
+            alert('event 2');
+        });
+    </script> -->
+
+    <!-- <script>
+        window.onload=function(){
+            var h1 = document.querySelector('h1');
+
+            h1.onclick=function(){
+                this.innerHTML = "문서를 로딩했습니다.";
+            }
+        }
+        
+    </script> -->
+
+    <!--<h1>홈페이지에 접속하셨습니다.</h1>
+
+    <script type="text/javascript">
+        //<Event 요소>
+        //onClick 마우스 클릭 시
+        //onmouseover 마우스가 해당 내용 안에 들어왔을 때
+        //mouseout 마우스가 해당 내용 안에 벗어났을 때
+        //onkeydown 키보드를 입력했을 때
+        //onkeyup 키보드를 땠을 때
+        //onfocus.onblur 해당 요소가 선택되었거나 해제했을 때
+        //onsubmit 폼 전송 이벤트가 발생했을 때
+    </script> -->
+
+
+    <!-- <div id="box">
+        <p>마우스를 올려주세요</p>
+    </div>
+
+    <script>
+        var box= document.getElementById('box');
+
+        //마우스 오버
+        box.addEventListener('mouseover', function(){
+            box.setAttribute('class','hover');
+        });
+
+        //마우스 아웃
+        box.addEventListener('mouseout', function(){
+            box.removeAttribute('class');
+        });
+    </script> -->
+
+
+
+
+    <div id="box">
+        <p>마우스를 올려주세요</p>
+    </div>
+
+    <script>
+
+        var box=document.querySelector('#box');
+        //touchstart 화면을 건드렸을때
+        //touchend 화면에서 손을 때었을 때
+        //touchmove 화면에서 터치로 이동 중일 때
+
+
+        //터치 제어를 위한 객체 선언
+        var touch = {
+            start: function(){
+                box.innerHTML = '나를 건드렸구뇽~!';
+                this.style.background = "red";
+            },
+            end: function(){
+                box.innerHTML = '손을 떼었군요!';
+                this.style.background = '"red"';
+            },
+            move: function(e){
+                box.innerHTML = '만지는 중입니다';
+                this.style.background = "yellow";
+
+                var touchobj = e.changedTouches[0];
+                //현재 손가락 위치
+                var x = parseInt(touchobj.clientX),
+                    y = parseInt(touchobj.clientY),
+                    ex = x - 100;
+                    ey = y - 200;
+                box.innerHTML = "만지는 중입니다";
+                this.style.background = "yellow";
+                this.style.left = ex+'px';
+                this.style.top = ey+'px';
+                console.log(touchobj);
+            }
+        }
+
+        box.addEventListener('touchstart', touch.start);
+        box.addEventListener('touchend', touch.end);
+        box.addEventListener('touchmove', touch.move);
+
+    </script>
+    
+</body>
+</html>

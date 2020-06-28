@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;}
+        body{padding:20px;}        
+        h1,h2,h3,h4,p{font-weight:normal; margin:5px 0;}
+
+        /* lightbox container  */
+        #lightbox.active{position:absolute; overflow:hidden; background:#333; width:800px; height:540px; left:50%; margin-left:-400px; top:50%; margin-top:-250px; box-sizing:border-box; padding:30px; z-index:99; display:block;}
+        #lightbox{display:none;}
+        #lightbox h1, #lightbox p{color:white; text-align:center; margin-bottom:10px;}
+
+        /* imagebox */
+        figure{width:500px; height:300px; position:relative; margin:10px auto; overflow:hidden;}
+        figure img{display:none; position:absolute;}
+        figure img.active{display:block;}
+
+        /* close button */
+        .btn-close{position:absolute; top:0px; right:0px; padding:10px; color:white; font-size:large;}
+        .btn-close:hover{background:#666;}
+
+        /* lightbox bg */
+        #block{position:fixed; width:100%; height:100%; top:0; bottom:0; left:0; right:0; background:#111; opacity:0.5; z-index:9; display:none;}
+        #block.active{display:block;}
+
+        /* indicator navigation */
+        .indicator{text-align:center;}
+        .indicator button{background:#666; color:white; font-size:12px; border:none; padding:2px 5px;}
+        .indicator button:focus{background:#38f;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>light box</h1>
+        <img class="thumb" src="img/img01.jpg" alt="banner01" width="100px;" onclick="lightbox_open(1)">
+        <img class="thumb" src="img/img02.jpg" alt="banner02" width="100px;" onclick="lightbox_open(2)">
+        <img class="thumb" src="img/img03.jpg" alt="banner03" width="100px;" onclick="lightbox_open(3)">
+    </header>
+
+    <!-- thumb -->
+    <div id="block"></div>
+
+    <!-- bg -->
+    <div id="lightbox">
+        <h1>박물관에서 사라진 아빠를 찾아서</h1>
+        <p>아빠와 함께 떠난 숲속의 박물관 여행에서 아빠가 말도 없이 사라지자 강아지 베리와 함께 아빠를 찾아 헤메는데...</p>
+        <figure>
+            <img src="img/img01.jpg" class="active" alt="" width="500px;">
+            <img src="img/img02.jpg" alt="" width="500px;">
+            <img src="img/img03.jpg" alt="" width="500px;">
+        </figure>
+
+        <div class="indicator">
+            <button onclick="change_img(this.innerHTML)">1</button>
+            <button onclick="change_img(this.innerHTML)">2</button>
+            <button onclick="change_img(this.innerHTML)">3</button>
+        </div>
+
+        <div class="btn-close" onclick="lightbox_close()">X</div>
+    </div>
+
+
+
+    
+
+    <script type="text/javascript">
+
+        //변수초기화
+        var indicator = document.querySelectorAll('.indicator button');
+        var lightbox = document.querySelector('#lightbox');
+        var block = document.querySelector('#block');  //라이트박스 배경
+
+        //라이트박스 표시
+        function lightbox_open(num){       
+            lightbox.setAttribute('class','active');
+            block.setAttribute('class','active');
+
+            change_img(num);
+            indicator[num-1].focus();
+        }
+        
+        //라이트박스 닫기
+        function lightbox_close(){
+            lightbox.removeAttribute('class');
+            block.removeAttribute('class');
+        }
+
+        //이미지 전환
+        function change_img(val){
+            var imgs = document.querySelectorAll('figure>img');
+
+            for (var i=0; i<imgs.length; i++){
+                imgs[i].removeAttribute('class');
+            }
+            imgs[val-1].setAttribute('class','active');
+        }
+    </script>
+</body>
+</html>

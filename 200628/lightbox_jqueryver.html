@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        li{list-style:none;}
+        .tab-menu>ul{display:flex;}
+        .tab-menu>ul>li{margin:10px 20px; cursor:pointer;}
+        .content02{display:none;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="tab-menu">
+            <ul>
+                <li class="tab01">공지사항</li>
+                <li class="tab02">주간회의</li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="content01">
+                1. 공지사항...... <br>
+                2. 회식장소...... <br>
+            </div>
+            <div class="content02">
+                1. 반응형 웹...... <br>
+                2. 거래처별 기록.. <br>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <script>
+        $(function(){
+            $('.tab01').click(function(){
+                $('.content01').css("display","block");
+                $('.content02').css("display","none");
+                // $('.content01').fadeIn();
+                // $('.content02').fadeOut();
+            });
+            $('.tab02').click(function(){
+                $('.content02').css("display","block");
+                $('.content01').css("display","none");
+                // $('.content01').slideDown();
+                // $('.content02').slideUp();
+            });
+        });
+    </script>
+    
+</body>
+</html>
