@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style type="text/css">
+    *{margin:0; padding:0;}
+    li{list-style:none;}
+    a{color:inherit; text-decoration:none;}
+
+    /* .wrap-tab{width:50%; margin:0 auto;}
+
+    .wrap-list>ul{display:flex;}
+    .wrap-list>ul>li{width:50%; height:50px; display:flex; align-items:center; justify-content:center;}
+    .wrap-list>ul>li:first-child{background:khaki;}
+    .wrap-list>ul>li:last-child{background:lightcoral;}
+    .tab-content-02{display:none;} */
+
+    #background-changer{position:absolute; top:0; width:100%; height:900px; z-index:-1;}
+    </style>
+</head>
+<body>
+
+    <div id="background-changer"></div>
+
+    <!-- <h1>TAB</h1>
+    
+    <div class="wrap-tab">
+        <div class="wrap-list">
+            <ul>
+                <li class="tab-btn01"><a href="#">공지사항</a></li>
+                <li class="tab-btn02"><a href="#">게시판</a></li>
+            </ul>
+        </div>
+        <div class="wrap-content">
+            <div class="tab-content-01">
+                <p>2020-07-05 공지사항 표시입니다.</p>
+                <p>2020-07-04 해당하는 컨텐츠입니다.</p>
+            </div>
+            <div class="tab-content-02">
+                <p>2020-07-03 게시판입니다.</p>
+                <p>2020-07-02 게시판 리스트입니다.</p>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+
+    var images = ["sonata01.jpg","sonata02.jpg","sonata03.jpg"];
+    $(function(){
+        var i=0;
+        $("#background-changer").css("background-image","url(car_img/"+images[i]+")");
+
+        setInterval(function(){
+            i++; if(i==images.length){
+                i=0;
+            }
+            $("#background-changer").fadeOut("slow",function(){
+                    $(this).css("background-image","url(car_img/"+images[i]+")");
+                    $(this).fadeIn("slow");
+            });
+        },3000);
+    });
+
+
+
+
+        // $(function(){
+        //     $(".tab-btn01").click(function(){
+        //         $(".tab-content-01").css("display","block");
+        //         $(".tab-content-02").css("display","none");
+        //     });
+        //     $(".tab-btn02").click(function(){
+        //         $(".tab-content-02").css("display","block");
+        //         $(".tab-content-01").css("display","none");
+        //     });
+        // });
+    </script>
+</body>
+</html>
