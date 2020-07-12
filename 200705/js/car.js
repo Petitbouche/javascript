@@ -88,3 +88,10 @@ $(function(){
 });
 
 
+
+
+$(function(){
+    $('#btn').click(function(){
+        $('.btn-content').slideToggle();
+    });
+});

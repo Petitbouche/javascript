@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry</title>
+    <style type="text/css">
+        .sub_wrap{width:30%; padding:1%}
+        .sub_wrap>img{width:100%;}
+    </style>
+</head>
+<body>
+    <div class="all_wrap">
+        <div class="sub_wrap">
+            <img src="img/ph01.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph02.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph03.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph04.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph05.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph06.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph07.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph08.jpg" alt="">
+        </div>
+        <div class="sub_wrap">
+            <img src="img/ph09.jpg" alt="">
+        </div>
+    </div>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.all_wrap').masonry({
+                itemSelector:'.sub_wrap',
+                fitwidth:true,
+                // columnWidth:100
+            });
+        });
+        
+    </script>
+</body>
+</html>

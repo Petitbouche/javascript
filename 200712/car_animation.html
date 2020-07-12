@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car animation</title>
+    <link rel="stylesheet" href="css/car_animation.css">
+</head>
+<body>
+    <div class="carbox"></div>
+    <div style="text-align:center; margin-top:10px;">
+        <button type="button" onclick="gogogo()">푸드트럭 출동!!</button>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        function gogogo(){
+            var el = $('<div class="car num' + Math.ceil(Math.random()*3)+'"></div>').appendTo('.carbox');
+
+            var rnd1 = Math.round(Math.random()*20);
+
+            el.animate({'bottom':0}, {
+                duration:2000,
+                easing:'easeOutBounce',
+                queue:false
+            });
+
+            el.animate({'left':rnd1 + '%'},{
+                duration:2000,
+                easing:'easeOutQuad',
+                complete: function(){
+                    el.animate({'left':'100%'},2000,'easeInQuart', function(){el.remove();});
+                }
+            });
+        }
+    </script>
+</body>
+</html>

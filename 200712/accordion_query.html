@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion jQuery</title>
+    <link rel="stylesheet" href="css/accordion_query.css">
+</head>
+<body>
+    <dl>
+        <dt><span></span>전화상담은 언제부터 가능한가요?</dt>
+        <dd>000</dd>
+        <dt><span></span>내 구매내역은 어디서 확인할까요?</dt>
+        <dd>111</dd>
+    </dl>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $('dt').on('click',function(){
+            function slideDown(target){
+                slideUp();
+                $(target).addClass('on').next().slideDown();
+            }
+            function slideUp(){
+                $('dt').removeClass('on').next().slideUp();
+            };
+            $(this).hasClass('on') ? slideUp() : slideDown($(this));
+        });
+
+        //slideToggle을 사용하면 쉽다.
+    </script>
+</body>
+</html>

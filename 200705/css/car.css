@@ -23,12 +23,27 @@ li{list-style:none;}
 
 img{width:100%;}
 
-
 .nav-tabs>li{width:50%;}
 
 .nav-tabs>li{text-align:center;}
 
 .nav-tabs>li>a{font-size:18px;}
+
+
+
+.modal-img{padding:5% 0;}
+
+.tabp>img{width:80%;}
+
+.tabp{padding-top:5% 0;}
+
+.tab-btn>button{width:80%; border:none; font-size:2em;}
+
+.btn-content{border:1px solid #000; width:80%; margin:0 auto; height:200px; display:none; text-align:center; box-sizing:border-box; overflow-y:auto;}
+
+
+
+/* --------------------------- */
 
 .section02{padding:50px 0;}
 
@@ -37,3 +52,7 @@ img{width:100%;}
 .section04{padding:50px 0;}
 
 .section05{padding:50px 0; background:#f6f3f2;}
+
+.section06{padding:50px 0; background:#f6f3f2;}
+
+.section07{padding:50px 0; background:#f6f3f2;}

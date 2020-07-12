@@ -1,0 +1,11 @@
+*{margin:0; padding:0;}
+
+dt, dd{padding:10px;}
+
+dt{background:#cfc; margin-bottom:5px;}
+
+dt span{display:inline-block; width:5px; height:5px; background:black; vertical-align:middle; margin-right:10px;}
+
+dt.on span{background:red;}
+
+dd{background:tan; margin-bottom:5px; display:none;}
