@@ -1,0 +1,43 @@
+
+//json : 주석 금지
+{
+    "name" : "식빵",
+    "family": "웰시코기",
+    "age": 1,
+    "weight": 2.14
+}
+
+//xml : 대문자 금지
+<dog>
+    <name>식빵</name>
+    <family>웰시코기</family>
+    <age>1</age>
+    <weight>2.14</weight>
+</dog>
+
+
+1. json데이터는 이름과 값의 쌍으로 이루어집니다.
+2. json데이터는 쉼표(,)로 나열됩니다.
+3. 객체(object)는 중괄호({})로 둘러쌓아 표현합니다.
+4. 배열(array)은 대괄호([])로 둘러쌓아 표현합니다.
+
+"dog":[
+    {"name":"식빵","family":"웰시코기","age":1, "weight":2.14},
+    {"name":"식빵","family":"웰시코기","age":1, "weight":2.14},
+    {"name":"식빵","family":"웰시코기","age":1, "weight":2.14}
+]
+
+
+
+{
+    "dog":{
+        "name":"식빵",
+        "family":"웰시코기",
+        "age":1,
+        "weight":2.14,
+        "owner":{
+            "ownername":"홍길동",
+            "phone":"01012345678"
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map</title>
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+    <header>
+        <h1>CSSLICK</h1>
+        <nav>
+            <span><a href="#">HOME</a></span>
+            <span><a href="#">About</a></span>
+            <span><a href="#">Contact Us</a></span>
+        </nav>
+    </header>
+    <main>
+        <figure class="banner">
+            <div class="figure_header">
+                <h2>Contact Us</h2>
+                <p>Lorem Ipsum Dolor sit amet, consectetur.</p>
+            </div>
+        </figure>
+            <section>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div id="map"><br>&nbsp;지도가 표시될 영역</div>
+                </article>
+                <aside>
+                    <form action="">
+                        <fieldset>
+                            <legend>Send us Email</legend>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="msg">Message</label>
+                                <textarea type="msg" id="msg" cols="30" rows="8"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button>SEND</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </aside>
+            <section>
+    </main>
+
+
+    <script>
+        function initMap(){
+            //맵 객체를 생성하고 id='map'에 지도 표시
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center:{lat:37.571717, lng:126.976479},
+                scrollwheel:false,
+                zoom:17
+            });
+            //내 위치 표시
+            var marker = new google.maps.Marker({
+                map:map,
+                position:{lat:37.571717, lng:126.976479},
+                title:'여기가 내 위치입니다!'
+            });
+            //정보 저장
+            var infoWindow = new google.maps.InfoWindow({map:map});
+            var my_position = {lat:37.571717, lng:126.976479};
+            infoWindow.setPosition(my_position);
+            infoWindow.setContent('여기가 내 위치입니다!');
+        }
+    </script>
+
+    <!-- googlemap -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA79F3HwKaIZZGfFmXbW6esaI6fqbxti0I&callback=initMap"></script>
+</body>
+</html>
