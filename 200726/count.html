@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="countdown">
+        <li class="border-white">
+            <span class="days" id="time-day">00</span>
+            <p class="days_text">Days</p>
+        </li>
+        <li class="border-white">
+            <span class="hours" id="time-hour">00</span>
+            <p class="hours_text">Hours</p>
+        </li>
+        <li class="border-white">
+            <span class="minutes" id="time-minute">00</span>
+            <p class="minutes_text">Minutes</p>
+        </li>
+        <li class="border-white">
+            <span class="seconds" id="time-second">00</span>
+            <p class="seconds_text">Seconds</p>
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+        var ddaytimer = setInterval(dayGap, 1000);
+        function dayGap(){
+            var dday = new Date("August 01, 2020 24:00:00").getTime();
+            var nowday = newDate();
+            nowday = nowday.getTime();
+            var distance = dday - nowday;
+
+            var d = Math.floor(distance / (1000*60*60*24));    //일
+            var h = Math.floor((distace / (1000*60*60))%24);   //시간
+            var m = Math.floor((distance / (1000*60))%60);     //분
+            var s = Math.floor((distance / 1000)%60);          //초
+
+            if(distance<=0) {      //당일 넘어섰을 때, dday로 변경
+                document.getElementById("dday-timer").innerHTML = "D-day";
+            } else {
+                document.getElementById("time-day").innerHTML = d;
+                document.getElementById("time-hour").innerHTML = h;
+                document.getElementById("time-minute").innerHTML = m;
+                document.getElementById("time-second").innerHTML = s;
+            }
+        }
+    </script>
+</body>
+</html>

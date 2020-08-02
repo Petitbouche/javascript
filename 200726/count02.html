@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <p>남은시간 : <span id="timer"></span></p>
+    <span id="m01">일</span>
+    <span id="m02">시</span>
+    <span id="m03">분</span>
+    <span id="m04">초</span>
+    <script>
+        var stDate = new Date().getTime();
+        var edDate = new Date('2020-08-01 24:00:00').getTime(); // 종료날짜
+        var RemainDate = edDate - stDate;
+
+        function msg_time() {
+            var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((RemainDate % (1000 * 60)) / 1000);
+            m = hours + ":" + miniutes + ":" + seconds; 
+            document.getElementById("time-day").innerHTML = d;
+                document.getElementById("hours").innerHTML = h;
+                document.getElementById("minutes").innerHTML = m;
+                document.getElementById("seconds").innerHTML = s;            // document.all.timer.innerHTML = m;
+            if (RemainDate < 0) {
+                // 시간이 종료 되었으면..
+                clearInterval(tid); // 타이머 해제
+            } else {
+                RemainDate = RemainDate - 1000; // 남은시간 -1초
+            }
+        }
+        $(document).ready(function () {
+            tid = setInterval('msg_time()', 1000); // 타이머 1초간격으로 수행
+        });
+    </script>
+</body>
+
+</html>
